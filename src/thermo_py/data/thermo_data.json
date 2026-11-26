@@ -1,0 +1,3781 @@
+{
+  "_meta": {
+    "cp_form": "Cp = A + B*T + C*T^2 + D*T^3",
+    "cp_units": "J/(mol*K)",
+    "T_units": "K",
+    "cp_approx": "Single approximate Cp value from the table, J/(mol*K), for constant-Cp calculations",
+    "phases": {
+      "cp_gas": "gas",
+      "cp_liquid": "liquid"
+    },
+    "units_note": "Units and T scale inferred by checking coefficients against cp_approx at 298 K (not shown in the screenshots); confirm against the table's header/footnote.",
+    "sources": {
+      "murphy-2e-B19": {
+        "citation": "Murphy, R. M., Introduction to Chemical Processes: Principles, Analysis, Synthesis, 2nd ed., Appendix B.8, Table B.19"
+      },
+      "murphy-2e-B6": {
+        "citation": "Murphy, R. M., Introduction to Chemical Processes: Principles, Analysis, Synthesis, 2nd ed., Appendix B.5, Table B.6; compiled from Lange's Handbook of Chemistry, 14th ed., and the NIST Chemistry WebBook"
+      },
+      "murphy-2e-B22": {
+        "citation": "Murphy, R. M., Introduction to Chemical Processes: Principles, Analysis, Synthesis, 2nd ed., Appendix B.9, Table B.22; compiled from Perry's Chemical Engineers' Handbook 6th ed., CRC Handbook 70th ed., Lange's Handbook 14th ed."
+      },
+      "murphy-2e-B5": {
+        "citation": "Murphy, R. M., Introduction to Chemical Processes: Principles, Analysis, Synthesis, 2nd ed., Appendix B.4, Table B.5; compiled from Perry's Chemical Engineers' Handbook 6th and 7th eds., Lange's Handbook of Chemistry 14th ed., and the NIST Chemistry WebBook"
+      },
+      "murphy-2e-B7": {
+        "citation": "Murphy, R. M., Introduction to Chemical Processes: Principles, Analysis, Synthesis, 2nd ed., Appendix B.6, Table B.7; adapted from A. L. Hines and R. N. Maddox, Mass Transfer: Fundamentals and Applications (1984), Prentice-Hall"
+      }
+    },
+    "antoine_form": "log10(P) = A - B/(T + C)",
+    "antoine_units": {
+      "P": "mmHg",
+      "T": "C"
+    },
+    "antoine_note": "antoine is a list of constant sets; each has its own T_range (C) and phase ('l' unless noted).",
+    "phase_change_units": {
+      "Tm": "C",
+      "dHm": "kJ/mol",
+      "Tb": "C",
+      "dHv": "kJ/mol"
+    },
+    "standard_note": "standard = properties at 25 C, 1 atm, keyed by phase (g, l, s, aq). dGf, dHf, dHc in kJ/mol. dHc is for combustion of the compound in the indicated phase to CO2(g), H2O(g), Cl2(g), N2(g), SO2(g) (lower heating value). With H2O(l) as product, dHc is more negative by 44.0*n kJ/mol, n = moles H2O formed.",
+    "henry_note": "henry_water: Henry's law constants for the gas dissolved in water, H = y*P/x = p/x, in atm (x = mole fraction in the liquid). Stored as points [T_C, H_atm]; interpolate between them.",
+    "MW_note": "MW in g/mol, calculated from the formula with standard (IUPAC conventional) atomic weights."
+  },
+  "acetaldehyde": {
+    "formula": "C2H4O",
+    "MW": 44.053,
+    "cp_gas": {
+      "cp_approx": 54.7,
+      "source": "murphy-2e-B19"
+    },
+    "cp_liquid": {
+      "cp_approx": 89.05,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 8.0055,
+        "B": 1600,
+        "C": 291.8,
+        "T_range": [
+          -45,
+          70
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -123.5,
+      "dHm": 3.2,
+      "Tb": 21,
+      "dHv": 25.8,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -133.1,
+        "dHf": -166.2,
+        "dHc": -1104.5,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "acetic-acid": {
+    "formula": "C2H4O2",
+    "MW": 60.052,
+    "cp_gas": {
+      "cp_approx": 66.5,
+      "A": 4.84,
+      "B": 0.2549,
+      "C": -0.0001753,
+      "D": 4.949e-08,
+      "source": "murphy-2e-B19"
+    },
+    "cp_liquid": {
+      "cp_approx": 124.4,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 7.38782,
+        "B": 1533.313,
+        "C": 222.309,
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": 16.6,
+      "dHm": 11.535,
+      "Tb": 118.3,
+      "dHv": 23.7,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -374.6,
+        "dHf": -432.8,
+        "dHc": -814.6,
+        "source": "murphy-2e-B5",
+        "note": "dHc does not match the gas: it differs from the value implied by the gas dHf by about the heat of vaporization (or sublimation), so it is likely for the compound in its normal state at 25 C (liquid or solid), despite being printed on the gas row. Stored as printed."
+      },
+      "l": {
+        "dGf": -392.5,
+        "dHf": -486.18,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "acetone": {
+    "formula": "C3H6O",
+    "MW": 58.08,
+    "cp_gas": {
+      "cp_approx": 74.5,
+      "A": 6.301,
+      "B": 0.2606,
+      "C": -0.0001253,
+      "D": 2.038e-08,
+      "source": "murphy-2e-B19"
+    },
+    "cp_liquid": {
+      "A": 72.2,
+      "B": 0.186,
+      "C": 0.0,
+      "D": 0.0,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 7.02447,
+        "B": 1161.0,
+        "C": 224,
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -94.8,
+      "dHm": 5.691,
+      "Tb": 56.5,
+      "dHv": 29.1,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -151.3,
+        "dHf": -215.7,
+        "dHc": -1659,
+        "source": "murphy-2e-B5"
+      },
+      "l": {
+        "dGf": -155.5,
+        "dHf": -248.2,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "acetonitrile": {
+    "formula": "C2H3N",
+    "MW": 41.053,
+    "cp_gas": {
+      "cp_approx": 52.2,
+      "A": 20.48,
+      "B": 0.1196,
+      "C": -4.492e-05,
+      "D": 3.203e-09,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 7.11988,
+        "B": 1314.4,
+        "C": 230,
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -45,
+      "dHm": 8.2,
+      "Tb": 81.6,
+      "dHv": 34.2,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 91.868,
+        "dHf": 74.04,
+        "dHc": -1190.4,
+        "source": "murphy-2e-B5",
+        "note": "dHc does not match the gas: it differs from the value implied by the gas dHf by about the heat of vaporization (or sublimation), so it is likely for the compound in its normal state at 25 C (liquid or solid), despite being printed on the gas row. Stored as printed."
+      }
+    }
+  },
+  "acetylene": {
+    "formula": "C2H2",
+    "MW": 26.038,
+    "cp_gas": {
+      "cp_approx": 44.2,
+      "A": 26.82,
+      "B": 0.07578,
+      "C": -5.007e-05,
+      "D": 1.412e-08,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": -80.8,
+      "dHm": 3.8,
+      "Tb": -84,
+      "dHv": 17.0,
+      "source": "murphy-2e-B22",
+      "note": "Tb below Tm: acetylene sublimes at 1 atm; -84 C is the sublimation point."
+    },
+    "standard": {
+      "g": {
+        "dGf": 210.68,
+        "dHf": 228.2,
+        "dHc": -1257,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "ammonia": {
+    "formula": "NH3",
+    "MW": 17.031,
+    "cp_gas": {
+      "cp_approx": 35.6,
+      "A": 27.31,
+      "B": 0.02383,
+      "C": 1.707e-05,
+      "D": -1.185e-08,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 7.3605,
+        "B": 926.132,
+        "C": 240.17,
+        "T_range": [
+          -83,
+          60
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -77.7,
+      "dHm": 5.66,
+      "Tb": -33.4,
+      "dHv": 23.35,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "aq": {
+        "dGf": -26.57,
+        "dHf": -80.8,
+        "source": "murphy-2e-B5"
+      },
+      "g": {
+        "dGf": -16.6,
+        "dHf": -46.15,
+        "dHc": -316.8,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "argon": {
+    "formula": "Ar",
+    "MW": 39.948,
+    "cp_gas": {
+      "cp_approx": 20.8,
+      "A": 20.8,
+      "B": 0.0,
+      "C": 0.0,
+      "D": 0.0,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": -189.3,
+      "dHm": 1.2,
+      "Tb": -185.8,
+      "dHv": 6.65,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 0,
+        "dHf": 0,
+        "dHc": 0,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "benzene": {
+    "formula": "C6H6",
+    "MW": 78.114,
+    "cp_gas": {
+      "cp_approx": 81.7,
+      "A": -33.92,
+      "B": 0.4739,
+      "C": -0.0003017,
+      "D": 7.13e-08,
+      "source": "murphy-2e-B19"
+    },
+    "cp_liquid": {
+      "cp_approx": 134.3,
+      "A": -6.2106,
+      "B": 0.565,
+      "C": -0.0003141,
+      "D": 0.0,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 6.90565,
+        "B": 1211.033,
+        "C": 220.79,
+        "T_range": [
+          8,
+          103
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": 5.5,
+      "dHm": 9.951,
+      "Tb": 80.1,
+      "dHv": 30.7,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 129.6,
+        "dHf": 82.88,
+        "dHc": -3136,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "bromine": {
+    "formula": "Br2",
+    "MW": 159.808,
+    "cp_gas": {
+      "cp_approx": 36.3,
+      "A": 33.86,
+      "B": 0.01125,
+      "C": -1.192e-05,
+      "D": 4.534e-09,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 6.8778,
+        "B": 1119.68,
+        "C": 221.38,
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -7.2,
+      "dHm": 10.79,
+      "Tb": 58.0,
+      "dHv": 31.045,
+      "source": "murphy-2e-B22"
+    }
+  },
+  "1,3-butadiene": {
+    "formula": "C4H6",
+    "MW": 54.092,
+    "cp_gas": {
+      "cp_approx": 79.5,
+      "A": -1.687,
+      "B": 0.3419,
+      "C": -0.000234,
+      "D": 6.335e-08,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 6.84999,
+        "B": 930.546,
+        "C": 238.854,
+        "T_range": [
+          -58,
+          15
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -108.9,
+      "dHm": 7.984,
+      "Tb": -4.4,
+      "dHv": 22.5,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 149.7,
+        "dHf": 109.24,
+        "dHc": -2409,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "n-butane": {
+    "formula": "C4H10",
+    "MW": 58.124,
+    "cp_gas": {
+      "cp_approx": 98.9,
+      "A": 9.487,
+      "B": 0.3313,
+      "C": -0.0001108,
+      "D": -2.822e-09,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": -138.3,
+      "dHm": 4.664,
+      "Tb": -0.5,
+      "dHv": 22.4,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -15.707,
+        "dHf": -124.73,
+        "dHc": -2657.3,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "carbon-dioxide": {
+    "formula": "CO2",
+    "MW": 44.009,
+    "cp_gas": {
+      "cp_approx": 37.0,
+      "A": 19.8,
+      "B": 0.07344,
+      "C": -5.602e-05,
+      "D": 1.7115e-08,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": -57.5,
+      "dHm": 7.95,
+      "Tb": -78.4,
+      "dHv": 25.23,
+      "source": "murphy-2e-B22",
+      "note": "Tb below Tm: CO2 sublimes at 1 atm; -78.4 C is the sublimation point."
+    },
+    "standard": {
+      "g": {
+        "dGf": -394.37,
+        "dHf": -393.5,
+        "dHc": 0,
+        "source": "murphy-2e-B5"
+      }
+    },
+    "henry_water": {
+      "points": [
+        [
+          0,
+          728
+        ],
+        [
+          10,
+          1040
+        ],
+        [
+          20,
+          1420
+        ],
+        [
+          30,
+          1860
+        ],
+        [
+          40,
+          2330
+        ],
+        [
+          50,
+          2830
+        ]
+      ],
+      "source": "murphy-2e-B7"
+    }
+  },
+  "carbon-disulfide": {
+    "formula": "CS2",
+    "MW": 76.131,
+    "cp_gas": {
+      "cp_approx": 34.2,
+      "A": 27.44,
+      "B": 0.08127,
+      "C": -7.666e-05,
+      "D": 2.673e-08,
+      "source": "murphy-2e-B19",
+      "note": "Coefficients give 45.6 J/mol/K at 298 K vs cp_approx 34.2; coefficients match literature (~45), so cp_approx may be off. Stored as printed."
+    },
+    "antoine": [
+      {
+        "A": 6.94279,
+        "B": 1169.11,
+        "C": 241.59,
+        "T_range": [
+          3,
+          80
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -112,
+      "dHm": 4.395,
+      "Tb": 46.5,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 66.8,
+        "dHf": 116.9,
+        "dHc": -1076.9,
+        "source": "murphy-2e-B5",
+        "note": "dHc does not match the gas: it differs from the value implied by the gas dHf by about the heat of vaporization (or sublimation), so it is likely for the compound in its normal state at 25 C (liquid or solid), despite being printed on the gas row. Stored as printed."
+      }
+    }
+  },
+  "carbon-monoxide": {
+    "formula": "CO",
+    "MW": 28.01,
+    "cp_gas": {
+      "cp_approx": 29.1,
+      "A": 30.87,
+      "B": -0.01285,
+      "C": 2.789e-05,
+      "D": -1.272e-08,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": -205.0,
+      "dHm": 0.837,
+      "Tb": -191.5,
+      "dHv": 6.04,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -137.27,
+        "dHf": -110.53,
+        "dHc": -283,
+        "source": "murphy-2e-B5"
+      }
+    },
+    "henry_water": {
+      "points": [
+        [
+          0,
+          35200
+        ],
+        [
+          10,
+          44200
+        ],
+        [
+          20,
+          53600
+        ],
+        [
+          30,
+          62000
+        ],
+        [
+          40,
+          69600
+        ],
+        [
+          50,
+          76100
+        ]
+      ],
+      "source": "murphy-2e-B7"
+    }
+  },
+  "carbon-tetrachloride": {
+    "formula": "CCl4",
+    "MW": 153.811,
+    "cp_gas": {
+      "cp_approx": 84.0,
+      "A": 40.72,
+      "B": 0.2049,
+      "C": -0.000227,
+      "D": 8.843e-08,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": -24.0,
+      "dHm": 2.69,
+      "Tb": 77,
+      "dHv": 30.46,
+      "source": "murphy-2e-B22"
+    }
+  },
+  "chlorine": {
+    "formula": "Cl2",
+    "MW": 70.9,
+    "cp_gas": {
+      "cp_approx": 34.0,
+      "A": 26.93,
+      "B": 0.03348,
+      "C": -3.869e-05,
+      "D": 1.547e-08,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 6.9379,
+        "B": 861.34,
+        "C": 246.33,
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -100.98,
+      "dHm": 6.41,
+      "Tb": -34.6,
+      "dHv": 20.41,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 0,
+        "dHf": 0,
+        "dHc": 0,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "chloroform": {
+    "formula": "CHCl3",
+    "MW": 119.369,
+    "cp_gas": {
+      "cp_approx": 65.8,
+      "A": 24.0,
+      "B": 0.1893,
+      "C": -0.0001841,
+      "D": 6.657e-08,
+      "source": "murphy-2e-B19"
+    },
+    "cp_liquid": {
+      "cp_approx": 114.8,
+      "A": 159.75,
+      "B": -0.3566,
+      "C": 0.0006902,
+      "D": 0.0,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 6.4934,
+        "B": 929.44,
+        "C": 196.03,
+        "T_range": [
+          -35,
+          61
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -63.6,
+      "dHm": 8.8,
+      "Tb": 61,
+      "dHv": 29.24,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -70.1,
+        "dHf": -103.61,
+        "source": "murphy-2e-B5",
+        "note": "dGf and dHf columns appear swapped in the table (printed dGf -103.61, dHf -70.1); stored swapped to match literature (dHf about -103, dGf about -70)."
+      }
+    }
+  },
+  "chlorobenzene": {
+    "formula": "C6H5Cl",
+    "MW": 112.556,
+    "cp_liquid": {
+      "cp_approx": 150.8,
+      "A": 93.77,
+      "B": 0.2732,
+      "C": -0.0002652,
+      "D": 0.0,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": -45,
+      "dHm": 9.55,
+      "Tb": 131.8,
+      "dHv": 35.19,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "l": {
+        "dGf": 89.2,
+        "dHf": 11.5,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "cyclohexane": {
+    "formula": "C6H12",
+    "MW": 84.162,
+    "cp_liquid": {
+      "cp_approx": 155.9,
+      "A": -75.225,
+      "B": 1.1754,
+      "C": -0.001344,
+      "D": 0.0,
+      "source": "murphy-2e-B19"
+    },
+    "standard": {
+      "g": {
+        "dGf": 31.8,
+        "dHf": -123.1,
+        "source": "murphy-2e-B5"
+      },
+      "l": {
+        "dGf": 26.7,
+        "dHf": -156.2,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "diethylamine": {
+    "formula": "(C2H5)2NH",
+    "MW": 73.139,
+    "cp_gas": {
+      "cp_approx": 119.5,
+      "source": "murphy-2e-B19"
+    },
+    "cp_liquid": {
+      "cp_approx": 172.5,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 5.8016,
+        "B": 583.3,
+        "C": 144.1,
+        "T_range": [
+          31,
+          61
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -93,
+      "dHm": 5.94,
+      "Tb": 58,
+      "dHv": 29.1,
+      "source": "murphy-2e-B22",
+      "note": "Tabulated Tb 58 C; Antoine constants and literature give about 55.5 C."
+    },
+    "standard": {
+      "g": {
+        "dGf": 73.08,
+        "dHf": -71.42,
+        "dHc": -2800.3,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "diethyl-ether": {
+    "formula": "(C2H5)2O",
+    "MW": 74.123,
+    "cp_gas": {
+      "cp_approx": 112.5,
+      "A": 21.42,
+      "B": 0.3359,
+      "C": -0.0001035,
+      "D": -9.357e-09,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": -116.3,
+      "dHm": 7.272,
+      "Tb": 34.6,
+      "dHv": 27.39,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -122.3,
+        "dHf": -252.7,
+        "source": "murphy-2e-B5"
+      },
+      "l": {
+        "dGf": -116.1,
+        "dHf": -272.8,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "dimethylamine": {
+    "formula": "(CH3)2NH",
+    "MW": 45.085,
+    "cp_gas": {
+      "cp_approx": 115.7,
+      "source": "murphy-2e-B19"
+    },
+    "cp_liquid": {
+      "cp_approx": 136.8,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 7.08212,
+        "B": 960.242,
+        "C": 221.67,
+        "T_range": [
+          -72,
+          6.9
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -92.2,
+      "dHm": 5.943,
+      "Tb": 7.8,
+      "dHv": 26.4,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 68.0,
+        "dHf": -18.6,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "dimethyl-ether": {
+    "formula": "(CH3)2O",
+    "MW": 46.069,
+    "cp_gas": {
+      "cp_approx": 65.6,
+      "source": "murphy-2e-B19"
+    },
+    "cp_liquid": {
+      "cp_approx": 102.3,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": -141.6,
+      "dHm": 4.94,
+      "Tb": -24,
+      "dHv": 21.51,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -109.0,
+        "dHf": -184.1,
+        "dHc": -28.84,
+        "source": "murphy-2e-B5",
+        "note": "dHc printed as -28.84, far from the value implied by dHf (about -1328); likely a misprint. Stored as printed."
+      }
+    }
+  },
+  "ethane": {
+    "formula": "C2H6",
+    "MW": 30.07,
+    "cp_gas": {
+      "cp_approx": 52.5,
+      "A": 5.409,
+      "B": 0.1781,
+      "C": -6.94e-05,
+      "D": 8.71e-09,
+      "source": "murphy-2e-B19"
+    },
+    "cp_liquid": {
+      "cp_approx": 68,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": -183.3,
+      "dHm": 2.859,
+      "Tb": -88.9,
+      "dHv": 14.7,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -31.92,
+        "dHf": -83.82,
+        "dHc": -1428.6,
+        "source": "murphy-2e-B5"
+      }
+    },
+    "henry_water": {
+      "points": [
+        [
+          0,
+          12600
+        ],
+        [
+          10,
+          18900
+        ],
+        [
+          20,
+          26300
+        ],
+        [
+          30,
+          34200
+        ],
+        [
+          40,
+          42300
+        ],
+        [
+          50,
+          50000
+        ]
+      ],
+      "source": "murphy-2e-B7"
+    }
+  },
+  "ethanol": {
+    "formula": "C2H5OH",
+    "MW": 46.069,
+    "cp_gas": {
+      "cp_approx": 65.5,
+      "A": 9.014,
+      "B": 0.2141,
+      "C": -8.39e-05,
+      "D": 1.373e-09,
+      "source": "murphy-2e-B19"
+    },
+    "cp_liquid": {
+      "cp_approx": 112.0,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 8.04494,
+        "B": 1554.3,
+        "C": 222.65,
+        "T_range": [
+          -2,
+          100
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -114.5,
+      "dHm": 5.021,
+      "Tb": 78.3,
+      "dHv": 38.6,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -167.85,
+        "dHf": -234.95,
+        "dHc": -1235,
+        "source": "murphy-2e-B5",
+        "note": "dHc does not match the gas: it differs from the value implied by the gas dHf by about the heat of vaporization (or sublimation), so it is likely for the compound in its normal state at 25 C (liquid or solid), despite being printed on the gas row. Stored as printed."
+      },
+      "l": {
+        "dGf": -174.72,
+        "dHf": -277.61,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "ethyl-acetate": {
+    "formula": "CH3COOC2H5",
+    "MW": 88.106,
+    "cp_gas": {
+      "cp_approx": 113.6,
+      "source": "murphy-2e-B19"
+    },
+    "cp_liquid": {
+      "cp_approx": 169.9,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 7.10179,
+        "B": 1244.95,
+        "C": 217.88,
+        "T_range": [
+          15,
+          76
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -83.6,
+      "dHm": 10.481,
+      "Tb": 77.1,
+      "dHv": 31.9,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -328.0,
+        "dHf": -444.5,
+        "dHc": -2061,
+        "source": "murphy-2e-B5"
+      },
+      "l": {
+        "dGf": -318.4,
+        "dHf": -463.3,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "ethylbenzene": {
+    "formula": "C8H10",
+    "MW": 106.168,
+    "cp_gas": {
+      "cp_approx": 128.4,
+      "A": -43.1,
+      "B": 0.7072,
+      "C": -0.0004811,
+      "D": 1.301e-07,
+      "source": "murphy-2e-B19"
+    },
+    "cp_liquid": {
+      "cp_approx": 185.6,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 6.95719,
+        "B": 1424.255,
+        "C": 213.21,
+        "T_range": [
+          26,
+          164
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -94,
+      "dHm": 9.2,
+      "Tb": 136.2,
+      "dHv": 35.6,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 130.73,
+        "dHf": 29.92,
+        "dHc": -4345,
+        "source": "murphy-2e-B5"
+      },
+      "l": {
+        "dGf": 119.7,
+        "dHf": -12.5,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "ethylene": {
+    "formula": "C2H4",
+    "MW": 28.054,
+    "cp_gas": {
+      "cp_approx": 43.7,
+      "A": 3.806,
+      "B": 0.1566,
+      "C": -8.348e-05,
+      "D": 1.755e-08,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": -169.4,
+      "dHm": 3.4,
+      "Tb": -103.7,
+      "dHv": 14.45,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 68.44,
+        "dHf": 52.51,
+        "dHc": -1323,
+        "source": "murphy-2e-B5"
+      }
+    },
+    "henry_water": {
+      "points": [
+        [
+          0,
+          5520
+        ],
+        [
+          10,
+          7680
+        ],
+        [
+          20,
+          10200
+        ],
+        [
+          30,
+          12700
+        ]
+      ],
+      "source": "murphy-2e-B7",
+      "note": "No values given at 40 or 50 C."
+    }
+  },
+  "ethylene-glycol": {
+    "formula": "C2H6O2",
+    "MW": 62.068,
+    "cp_gas": {
+      "cp_approx": 78.0,
+      "source": "murphy-2e-B19",
+      "note": "Formula printed as C2HO2 in the table (typo); stored as C2H6O2."
+    },
+    "antoine": [
+      {
+        "A": 8.0908,
+        "B": 2088.9,
+        "C": 203.5,
+        "T_range": [
+          50,
+          200
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -11.5,
+      "dHm": 11.234,
+      "Tb": 197,
+      "dHv": 49.6,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -302.6,
+        "dHf": -387.5,
+        "dHc": -1059,
+        "source": "murphy-2e-B5",
+        "note": "Formula printed as C2HO2 (typo); stored as C2H6O2. dHc does not match the gas: it differs from the value implied by the gas dHf by about the heat of vaporization (or sublimation), so it is likely for the compound in its normal state at 25 C (liquid or solid), despite being printed on the gas row. Stored as printed."
+      },
+      "l": {
+        "dGf": -319.8,
+        "dHf": -451.5,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "ethylene-oxide": {
+    "formula": "C2H4O",
+    "MW": 44.053,
+    "cp_gas": {
+      "cp_approx": 48.2,
+      "A": -7.519,
+      "B": 0.2222,
+      "C": -0.0001256,
+      "D": 2.592e-08,
+      "source": "murphy-2e-B19",
+      "note": "C printed as '-1.256-e4'; stored as -1.256e-4."
+    },
+    "antoine": [
+      {
+        "A": 7.12843,
+        "B": 1054.54,
+        "C": 237.76,
+        "T_range": [
+          -49,
+          12
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -112.44,
+      "dHm": 5.2,
+      "Tb": 13,
+      "dHv": 25.5,
+      "source": "murphy-2e-B22",
+      "note": "Tabulated Tb 13 C; Antoine constants and literature give about 10.5-10.7 C."
+    },
+    "standard": {
+      "g": {
+        "dGf": -13.23,
+        "dHf": -52.63,
+        "dHc": -1218,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "formaldehyde": {
+    "formula": "CH2O",
+    "MW": 30.026,
+    "cp_gas": {
+      "cp_approx": 35.4,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": -92,
+      "Tb": -19,
+      "dHv": 23.3,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -102.6,
+        "dHf": -108.6,
+        "dHc": -526.8,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "glycerol": {
+    "formula": "C3H8O3",
+    "MW": 92.094,
+    "cp_liquid": {
+      "cp_approx": 150.2,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 6.165,
+        "B": 1036,
+        "C": 28,
+        "T_range": [
+          183,
+          260
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": 18.2,
+      "dHm": 8.475,
+      "Tb": 287,
+      "dHv": 91.7,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dHf": -577.9,
+        "source": "murphy-2e-B5"
+      },
+      "l": {
+        "dGf": -475.5,
+        "dHf": -665.9,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "n-heptane": {
+    "formula": "C7H16",
+    "MW": 100.205,
+    "cp_gas": {
+      "cp_approx": 165.9,
+      "A": -5.146,
+      "B": 0.6762,
+      "C": -0.0003651,
+      "D": 7.658e-08,
+      "source": "murphy-2e-B19"
+    },
+    "cp_liquid": {
+      "cp_approx": 212,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 6.89677,
+        "B": 1264.9,
+        "C": 216.54,
+        "T_range": [
+          -2,
+          124
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -90.6,
+      "dHm": 14.162,
+      "Tb": 98.4,
+      "dHv": 31.8,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 8.165,
+        "dHf": -187.8,
+        "dHc": -4464.7,
+        "source": "murphy-2e-B5"
+      },
+      "l": {
+        "dGf": 1.757,
+        "dHf": -224.4,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "n-hexane": {
+    "formula": "C6H14",
+    "MW": 86.178,
+    "cp_gas": {
+      "cp_approx": 143.1,
+      "A": -4.413,
+      "B": 0.582,
+      "C": -0.0003119,
+      "D": 6.498e-08,
+      "source": "murphy-2e-B19",
+      "note": "B printed as 0.528; stored as 0.582 (likely transposed digits: 0.582 reproduces cp_approx 143.1 at 298 K, 0.528 gives 127)."
+    },
+    "cp_liquid": {
+      "cp_approx": 189.1,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 6.87601,
+        "B": 1171.17,
+        "C": 224.41,
+        "T_range": [
+          -25,
+          92
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -95.3,
+      "dHm": 13.078,
+      "Tb": 68.74,
+      "dHv": 28.9,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -0.066,
+        "dHf": -166.94,
+        "dHc": -3855.1,
+        "source": "murphy-2e-B5"
+      },
+      "l": {
+        "dGf": -3.81,
+        "dHf": -198.8,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "hydrazine": {
+    "formula": "N2H4",
+    "MW": 32.046,
+    "cp_gas": {
+      "cp_approx": 45.5,
+      "A": 9.768,
+      "B": 0.1895,
+      "C": -0.0001657,
+      "D": 6.025e-08,
+      "source": "murphy-2e-B19",
+      "note": "Coefficients give 53.1 J/mol/K at 298 K vs cp_approx 45.5. Stored as printed."
+    },
+    "cp_liquid": {
+      "cp_approx": 98.9,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": 2,
+      "dHm": 12.7,
+      "Tb": 113.3,
+      "dHv": 45.3,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 159.17,
+        "dHf": 95.353,
+        "dHc": -534,
+        "source": "murphy-2e-B5",
+        "note": "dHc does not match the gas: it differs from the value implied by the gas dHf by about the heat of vaporization (or sublimation), so it is likely for the compound in its normal state at 25 C (liquid or solid), despite being printed on the gas row. Stored as printed."
+      },
+      "l": {
+        "dHf": 50.46,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "hydrogen": {
+    "formula": "H2",
+    "MW": 2.016,
+    "cp_gas": {
+      "cp_approx": 29.1,
+      "A": 27.14,
+      "B": 0.0093,
+      "C": -1.381e-05,
+      "D": 7.645e-09,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": -259.2,
+      "dHm": 0.117,
+      "Tb": -252.7,
+      "dHv": 0.904,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 0,
+        "dHf": 0,
+        "dHc": -241.83,
+        "source": "murphy-2e-B5"
+      }
+    },
+    "henry_water": {
+      "points": [
+        [
+          0,
+          57900
+        ],
+        [
+          10,
+          63600
+        ],
+        [
+          20,
+          68300
+        ],
+        [
+          30,
+          72900
+        ],
+        [
+          40,
+          75100
+        ],
+        [
+          50,
+          76500
+        ]
+      ],
+      "source": "murphy-2e-B7"
+    }
+  },
+  "hydrogen-chloride": {
+    "formula": "HCl",
+    "MW": 36.458,
+    "cp_gas": {
+      "cp_approx": 29.5,
+      "A": 30.67,
+      "B": -0.0072,
+      "C": 1.246e-05,
+      "D": -3.898e-09,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": -114.2,
+      "dHm": 1.99,
+      "Tb": -85.0,
+      "dHv": 16.15,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -95.3,
+        "dHf": -92.31,
+        "dHc": -28.6,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "hydrogen-cyanide": {
+    "formula": "HCN",
+    "MW": 27.026,
+    "cp_gas": {
+      "cp_approx": 36.0,
+      "A": 21.86,
+      "B": 0.06062,
+      "C": -4.961e-05,
+      "D": 1.815e-08,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 7.5282,
+        "B": 1329.5,
+        "C": 260.4,
+        "T_range": [
+          -16,
+          46
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -13.4,
+      "dHm": 8.412,
+      "Tb": 25.7,
+      "dHv": 25.217,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 124.7,
+        "dHf": 135.14,
+        "dHc": -623.3,
+        "source": "murphy-2e-B5",
+        "note": "dHc does not match the gas: it differs from the value implied by the gas dHf by about the heat of vaporization (or sublimation), so it is likely for the compound in its normal state at 25 C (liquid or solid), despite being printed on the gas row. Stored as printed."
+      }
+    }
+  },
+  "hydrogen-sulfide": {
+    "formula": "H2S",
+    "MW": 34.076,
+    "cp_gas": {
+      "cp_approx": 34.2,
+      "A": 31.94,
+      "B": 0.001436,
+      "C": 2.432e-05,
+      "D": -1.176e-08,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": -85.5,
+      "dHm": 2.376,
+      "Tb": -60.3,
+      "dHv": 18.67,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -32.84,
+        "dHf": -19.96,
+        "dHc": -518.7,
+        "source": "murphy-2e-B5"
+      }
+    },
+    "henry_water": {
+      "points": [
+        [
+          0,
+          268
+        ],
+        [
+          10,
+          367
+        ],
+        [
+          20,
+          483
+        ],
+        [
+          30,
+          609
+        ],
+        [
+          40,
+          745
+        ],
+        [
+          50,
+          884
+        ]
+      ],
+      "source": "murphy-2e-B7"
+    }
+  },
+  "isobutane": {
+    "formula": "C4H10",
+    "MW": 58.124,
+    "cp_gas": {
+      "cp_approx": 97.2,
+      "A": -1.39,
+      "B": 0.3847,
+      "C": -0.0001846,
+      "D": 2.895e-08,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": -159.42,
+      "dHm": 4.611,
+      "Tb": -11.7,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -20.76,
+        "dHf": -131.418,
+        "dHc": -2649,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "isobutene": {
+    "formula": "C4H8",
+    "MW": 56.108,
+    "cp_gas": {
+      "cp_approx": 89.9,
+      "A": 16.05,
+      "B": 0.2804,
+      "C": -0.0001091,
+      "D": 9.098e-09,
+      "source": "murphy-2e-B19"
+    },
+    "standard": {
+      "g": {
+        "dGf": 70.27,
+        "dHf": -0.54,
+        "dHc": -2540.8,
+        "source": "murphy-2e-B5",
+        "note": "dHf -0.54 matches 1-butene; literature for isobutene is about -16.9 kJ/mol. Stored as printed."
+      }
+    }
+  },
+  "isopentane": {
+    "formula": "C5H12",
+    "MW": 72.151,
+    "cp_gas": {
+      "cp_approx": 118.7,
+      "A": -9.525,
+      "B": 0.5066,
+      "C": -0.0002729,
+      "D": 5.723e-08,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 6.78967,
+        "B": 1020.012,
+        "C": 233.097,
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -159.9,
+      "dHm": 5.147,
+      "Tb": 27.86,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -14.05,
+        "dHf": -153.7,
+        "dHc": -3239.5,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "isopropanol": {
+    "formula": "C3H7OH",
+    "MW": 60.096,
+    "cp_gas": {
+      "cp_approx": 80,
+      "A": 32.43,
+      "B": 0.1885,
+      "C": 6.406e-05,
+      "D": -9.261e-08,
+      "source": "murphy-2e-B19",
+      "note": "Coefficients give 91.9 J/mol/K at 298 K vs cp_approx 80. Stored as printed."
+    },
+    "cp_liquid": {
+      "cp_approx": 155,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 8.11778,
+        "B": 1580.92,
+        "C": 219.61,
+        "T_range": [
+          0,
+          100
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -89.5,
+      "dHm": 5.373,
+      "Tb": 82.3,
+      "dHv": 39.9,
+      "source": "murphy-2e-B22"
+    }
+  },
+  "lactic-acid": {
+    "formula": "C3H6O3",
+    "MW": 90.078,
+    "cp_gas": {
+      "cp_approx": 145,
+      "source": "murphy-2e-B19"
+    },
+    "cp_liquid": {
+      "cp_approx": 262,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 8.06,
+        "B": 1823.7,
+        "C": 134,
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": 16.8,
+      "Tb": 217,
+      "dHv": 63.4,
+      "source": "murphy-2e-B22"
+    }
+  },
+  "methane": {
+    "formula": "CH4",
+    "MW": 16.043,
+    "cp_gas": {
+      "cp_approx": 35.7,
+      "A": 19.25,
+      "B": 0.05213,
+      "C": 1.197e-05,
+      "D": -1.132e-08,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": -182.5,
+      "dHm": 0.937,
+      "Tb": -161.4,
+      "dHv": 8.535,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -50.49,
+        "dHf": -74.52,
+        "dHc": -802.6,
+        "source": "murphy-2e-B5"
+      }
+    },
+    "henry_water": {
+      "points": [
+        [
+          0,
+          22400
+        ],
+        [
+          10,
+          29700
+        ],
+        [
+          20,
+          37600
+        ],
+        [
+          30,
+          44900
+        ],
+        [
+          40,
+          52000
+        ],
+        [
+          50,
+          57700
+        ]
+      ],
+      "source": "murphy-2e-B7"
+    }
+  },
+  "methyl-acetate": {
+    "formula": "CH3COOCH3",
+    "MW": 74.079,
+    "cp_liquid": {
+      "cp_approx": 155.6,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 7.0652,
+        "B": 1157.63,
+        "C": 219.73,
+        "T_range": [
+          1,
+          56
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -98,
+      "Tb": 56.3,
+      "dHv": 30.3,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dHf": -410.0,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "methanol": {
+    "formula": "CH3OH",
+    "MW": 32.042,
+    "cp_gas": {
+      "cp_approx": 43.9,
+      "A": 21.15,
+      "B": 0.07092,
+      "C": 2.587e-05,
+      "D": -2.852e-08,
+      "source": "murphy-2e-B19"
+    },
+    "cp_liquid": {
+      "cp_approx": 81.2,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 7.8975,
+        "B": 1474.08,
+        "C": 229.13,
+        "T_range": [
+          -14,
+          65
+        ],
+        "source": "murphy-2e-B6"
+      },
+      {
+        "A": 7.97328,
+        "B": 1515.14,
+        "C": 232.85,
+        "T_range": [
+          65,
+          110
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -97.9,
+      "dHm": 3.177,
+      "Tb": 64.7,
+      "dHv": 35.2,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -162.32,
+        "dHf": -200.94,
+        "source": "murphy-2e-B5"
+      },
+      "l": {
+        "dGf": -166.12,
+        "dHf": -238.655,
+        "dHc": -638.46,
+        "source": "murphy-2e-B5",
+        "note": "dHc is given on the liquid row."
+      }
+    }
+  },
+  "nitric-oxide": {
+    "formula": "NO",
+    "MW": 30.006,
+    "cp_gas": {
+      "cp_approx": 29.8,
+      "A": 29.35,
+      "B": -0.0009378,
+      "C": 9.747e-06,
+      "D": -4.187e-09,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": -163.6,
+      "dHm": 2.3,
+      "Tb": -151.7,
+      "dHv": 13.83,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 86.57,
+        "dHf": 90.25,
+        "dHc": -90.2,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "nitrogen": {
+    "formula": "N2",
+    "MW": 28.014,
+    "cp_gas": {
+      "cp_approx": 29.1,
+      "A": 31.15,
+      "B": -0.01357,
+      "C": 2.68e-05,
+      "D": -1.168e-08,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 6.49457,
+        "B": 255.68,
+        "C": 266.55,
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -210.0,
+      "dHm": 0.72,
+      "Tb": -195.8,
+      "dHv": 5.59,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 0,
+        "dHf": 0,
+        "dHc": 0,
+        "source": "murphy-2e-B5"
+      }
+    },
+    "henry_water": {
+      "points": [
+        [
+          0,
+          52900
+        ],
+        [
+          10,
+          66800
+        ],
+        [
+          20,
+          80400
+        ],
+        [
+          30,
+          92400
+        ],
+        [
+          40,
+          104000
+        ],
+        [
+          50,
+          113000
+        ]
+      ],
+      "source": "murphy-2e-B7"
+    }
+  },
+  "nitrogen-dioxide": {
+    "formula": "NO2",
+    "MW": 46.005,
+    "cp_gas": {
+      "cp_approx": 36.97,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tb": 21.93,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 51.3,
+        "dHf": 33.3,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "nitrogen-tetroxide": {
+    "formula": "N2O4",
+    "MW": 92.01,
+    "cp_gas": {
+      "cp_approx": 77.26,
+      "source": "murphy-2e-B19"
+    },
+    "cp_liquid": {
+      "cp_approx": 142.51,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": -13,
+      "dHm": 23.2,
+      "Tb": 30,
+      "dHv": 29.5,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 97.95,
+        "dHf": 9.33,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "nitrous-oxide": {
+    "formula": "N2O",
+    "MW": 44.013,
+    "cp_gas": {
+      "cp_approx": 38.5,
+      "A": 21.62,
+      "B": 0.07281,
+      "C": -5.778e-05,
+      "D": 1.83e-08,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": -90.8,
+      "dHm": 6.5,
+      "Tb": -88.5,
+      "dHv": 16.53,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 104.16,
+        "dHf": 82.05,
+        "dHc": -82,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "n-octane": {
+    "formula": "C8H18",
+    "MW": 114.232,
+    "cp_gas": {
+      "cp_approx": 188.7,
+      "A": -6.096,
+      "B": 0.7712,
+      "C": -0.0004195,
+      "D": 8.855e-08,
+      "source": "murphy-2e-B19"
+    },
+    "cp_liquid": {
+      "cp_approx": 255,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 6.91868,
+        "B": 1351.99,
+        "C": 209.15,
+        "T_range": [
+          19,
+          152
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -56.8,
+      "dHm": 20.652,
+      "Tb": 125.66,
+      "dHv": 34.4,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 16.0,
+        "dHf": -208.75,
+        "dHc": -5074.2,
+        "source": "murphy-2e-B5"
+      },
+      "l": {
+        "dGf": 7.4,
+        "dHf": -249.95,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "oxygen": {
+    "formula": "O2",
+    "MW": 31.998,
+    "cp_gas": {
+      "cp_approx": 29.3,
+      "A": 28.11,
+      "B": -3.68e-06,
+      "C": 1.746e-05,
+      "D": -1.065e-08,
+      "source": "murphy-2e-B19",
+      "note": "C appears as -1.746e-5 in the screenshot; stored as +1.746e-5 (the standard value; gives 29.4 J/mol/K at 298 K, matching cp_approx 29.3)."
+    },
+    "antoine": [
+      {
+        "A": 6.69144,
+        "B": 319.013,
+        "C": 266.697,
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -218.9,
+      "dHm": 0.444,
+      "Tb": -182.9,
+      "dHv": 6.816,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 0,
+        "dHf": 0,
+        "dHc": 0,
+        "source": "murphy-2e-B5"
+      }
+    },
+    "henry_water": {
+      "points": [
+        [
+          0,
+          25500
+        ],
+        [
+          10,
+          32700
+        ],
+        [
+          20,
+          40100
+        ],
+        [
+          30,
+          47500
+        ],
+        [
+          40,
+          53500
+        ],
+        [
+          50,
+          58800
+        ]
+      ],
+      "source": "murphy-2e-B7"
+    }
+  },
+  "n-pentane": {
+    "formula": "C5H12",
+    "MW": 72.151,
+    "cp_gas": {
+      "cp_approx": 120.1,
+      "A": -3.626,
+      "B": 0.4873,
+      "C": -0.000258,
+      "D": 5.305e-08,
+      "source": "murphy-2e-B19"
+    },
+    "cp_liquid": {
+      "cp_approx": 168.6,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 6.85221,
+        "B": 1064.63,
+        "C": 233.01,
+        "T_range": [
+          -50,
+          58
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -129.7,
+      "dHm": 8.419,
+      "Tb": 36.08,
+      "dHv": 25.8,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -8.81,
+        "dHf": -146.76,
+        "dHc": -3244.9,
+        "source": "murphy-2e-B5"
+      },
+      "l": {
+        "dGf": -9.25,
+        "dHf": -173.05,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "phenol": {
+    "formula": "C6H5OH",
+    "MW": 94.113,
+    "cp_gas": {
+      "cp_approx": 103.6,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 7.133,
+        "B": 1516.79,
+        "C": 174.95,
+        "T_range": [
+          107,
+          182
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": 40.9,
+      "dHm": 11.289,
+      "Tb": 181.8,
+      "dHv": 45.9,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -32.637,
+        "dHf": -96.399,
+        "dHc": -2921,
+        "source": "murphy-2e-B5",
+        "note": "dHc does not match the gas: it differs from the value implied by the gas dHf by about the heat of vaporization (or sublimation), so it is likely for the compound in its normal state at 25 C (liquid or solid), despite being printed on the gas row. Stored as printed."
+      },
+      "l": {
+        "dGf": -46.11,
+        "dHf": -158.16,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "phosgene": {
+    "formula": "COCl2",
+    "MW": 98.91,
+    "cp_gas": {
+      "cp_approx": 57.7,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 6.84297,
+        "B": 941.25,
+        "C": 230,
+        "T_range": [
+          -68,
+          68
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -127.9,
+      "dHm": 5.74,
+      "Tb": 7.6,
+      "dHv": 24.4,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -206.8,
+        "dHf": -220.1,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "potassium-nitrate": {
+    "formula": "KNO3",
+    "MW": 101.102,
+    "cp_liquid": {
+      "cp_approx": 123.4,
+      "source": "murphy-2e-B19"
+    }
+  },
+  "propane": {
+    "formula": "C3H8",
+    "MW": 44.097,
+    "cp_gas": {
+      "cp_approx": 73.6,
+      "A": -4.224,
+      "B": 0.3063,
+      "C": -0.0001586,
+      "D": 3.215e-08,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": -181.7,
+      "dHm": 3.526,
+      "Tb": -42.1,
+      "dHv": 19.0,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -24.39,
+        "dHf": -104.68,
+        "dHc": -2043.1,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "n-propanol": {
+    "formula": "C3H7OH",
+    "MW": 60.096,
+    "cp_gas": {
+      "cp_approx": 87.3,
+      "A": 2.47,
+      "B": 0.3325,
+      "C": -0.0001855,
+      "D": 4.296e-08,
+      "source": "murphy-2e-B19"
+    },
+    "cp_liquid": {
+      "cp_approx": 150.9,
+      "A": 346.3,
+      "B": -1.749,
+      "C": 0.003552,
+      "D": 0.0,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 7.84767,
+        "B": 1499.21,
+        "C": 204.64,
+        "T_range": [
+          2,
+          120
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -126.1,
+      "dHm": 5.195,
+      "Tb": 97.2,
+      "dHv": 41.4,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -159.9,
+        "dHf": -255.2,
+        "dHc": -1843.8,
+        "source": "murphy-2e-B5",
+        "note": "dHc does not match the gas: it differs from the value implied by the gas dHf by about the heat of vaporization (or sublimation), so it is likely for the compound in its normal state at 25 C (liquid or solid), despite being printed on the gas row. Stored as printed."
+      },
+      "l": {
+        "dGf": -166.69,
+        "dHf": -300.7,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "propylene": {
+    "formula": "C3H6",
+    "MW": 42.081,
+    "cp_gas": {
+      "cp_approx": 63.9,
+      "A": 3.71,
+      "B": 0.2345,
+      "C": -0.000116,
+      "D": 2.205e-08,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": -185.3,
+      "dHm": 3.004,
+      "Tb": -47.7,
+      "dHv": 18.4,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 62.15,
+        "dHf": 19.71,
+        "dHc": -1925.7,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "silicon-tetrachloride": {
+    "formula": "SiCl4",
+    "MW": 169.885,
+    "cp_liquid": {
+      "cp_approx": 135.6,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 6.85726,
+        "B": 1138.92,
+        "C": 228.88,
+        "T_range": [
+          0,
+          53
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -67.6,
+      "dHm": 7.7,
+      "Tb": 56.8,
+      "dHv": 28.7,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "l": {
+        "dGf": -560.24,
+        "dHf": -627,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "sodium-nitrate": {
+    "formula": "NaNO3",
+    "MW": 84.994,
+    "cp_liquid": {
+      "cp_approx": 155.6,
+      "source": "murphy-2e-B19"
+    },
+    "standard": {
+      "s": {
+        "dGf": -367.06,
+        "dHf": -424.8,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "styrene": {
+    "formula": "C8H8",
+    "MW": 104.152,
+    "cp_gas": {
+      "cp_approx": 122.1,
+      "A": -28.25,
+      "B": 0.6159,
+      "C": -0.0004023,
+      "D": 9.935e-08,
+      "source": "murphy-2e-B19"
+    },
+    "cp_liquid": {
+      "cp_approx": 182.6,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 7.14016,
+        "B": 1574.51,
+        "C": 224.09,
+        "T_range": [
+          32,
+          82
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -30.6,
+      "dHm": 11.0,
+      "Tb": 145.1,
+      "dHv": 37.05,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 213.9,
+        "dHf": 147.4,
+        "dHc": -4219,
+        "source": "murphy-2e-B5",
+        "note": "Phase not labeled in the table; dHf 147.4 matches the gas."
+      }
+    }
+  },
+  "sulfur": {
+    "formula": "S8",
+    "MW": 256.48,
+    "cp_gas": {
+      "cp_approx": 156.1,
+      "source": "murphy-2e-B19",
+      "note": "Gas formula S8."
+    },
+    "cp_liquid": {
+      "formula": "S",
+      "cp_approx": 32,
+      "source": "murphy-2e-B19",
+      "note": "Liquid formula listed as S (per-atom basis)."
+    },
+    "phase_change": {
+      "Tm": 114,
+      "dHm": 1.727,
+      "Tb": 444.6,
+      "dHv": 9.2,
+      "source": "murphy-2e-B22"
+    },
+    "MW_note": "MW is for S8 (the gas formula); the liquid C_p and phase-change data are per mole of S atoms (32.06 g/mol)."
+  },
+  "sulfur-dioxide": {
+    "formula": "SO2",
+    "MW": 64.058,
+    "cp_gas": {
+      "cp_approx": 39.9,
+      "A": 23.85,
+      "B": 0.06699,
+      "C": -4.961e-05,
+      "D": 1.328e-08,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": -75.5,
+      "dHm": 7.401,
+      "Tb": -5,
+      "dHv": 24.94,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -299.9,
+        "dHf": -296.81,
+        "dHc": 0,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "sulfur-trioxide": {
+    "formula": "SO3",
+    "MW": 80.057,
+    "cp_gas": {
+      "cp_approx": 50.8,
+      "A": 19.21,
+      "B": 0.1374,
+      "C": -0.0001176,
+      "D": 3.7e-08,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": 17,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -370.66,
+        "dHf": -394.93,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "toluene": {
+    "formula": "C6H5CH3",
+    "MW": 92.141,
+    "cp_gas": {
+      "cp_approx": 103.8,
+      "A": -24.35,
+      "B": 0.5125,
+      "C": -0.0002765,
+      "D": 4.991e-08,
+      "source": "murphy-2e-B19"
+    },
+    "cp_liquid": {
+      "cp_approx": 157.2,
+      "A": 125.8,
+      "B": 0.0565,
+      "C": 0.00013593,
+      "D": 0.0,
+      "source": "murphy-2e-B19",
+      "note": "C printed as '1.3593-4'; stored as 1.3593e-4."
+    },
+    "antoine": [
+      {
+        "A": 6.95464,
+        "B": 1344.8,
+        "C": 219.48,
+        "T_range": [
+          6,
+          137
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -95,
+      "dHm": 6.851,
+      "Tb": 110.6,
+      "dHv": 33.2,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 122.0,
+        "dHf": 50.17,
+        "dHc": -3734,
+        "source": "murphy-2e-B5"
+      },
+      "l": {
+        "dGf": 114.148,
+        "dHf": 11.996,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "triethylamine": {
+    "formula": "(C2H5)3N",
+    "MW": 101.193,
+    "cp_gas": {
+      "cp_approx": 160.9,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": -114,
+      "Tb": 89.6,
+      "dHv": 31.0,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 114.1,
+        "dHf": -95.8,
+        "dHc": -4040.5,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "trimethylamine": {
+    "formula": "(CH3)3N",
+    "MW": 59.112,
+    "cp_gas": {
+      "cp_approx": 91.8,
+      "source": "murphy-2e-B19"
+    },
+    "phase_change": {
+      "Tm": -117.1,
+      "dHm": 6.5,
+      "Tb": 2.9,
+      "dHv": 22.9,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 98.99,
+        "dHf": -243.1,
+        "dHc": -2244.9,
+        "source": "murphy-2e-B5",
+        "note": "Phase not labeled. dHf -243.1 disagrees with literature (about -23.6 kJ/mol) and with dHc; likely a misprint of -24.31. Stored as printed."
+      }
+    }
+  },
+  "water": {
+    "formula": "H2O",
+    "MW": 18.015,
+    "cp_gas": {
+      "cp_approx": 33.6,
+      "A": 32.24,
+      "B": 0.001924,
+      "C": 1.055e-05,
+      "D": -3.596e-09,
+      "source": "murphy-2e-B19"
+    },
+    "cp_liquid": {
+      "cp_approx": 75.4,
+      "A": 72.43,
+      "B": 0.0104,
+      "C": 0.0,
+      "D": 0.0,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 8.10765,
+        "B": 1750.286,
+        "C": 235.0,
+        "T_range": [
+          0,
+          60
+        ],
+        "source": "murphy-2e-B6"
+      },
+      {
+        "A": 7.96681,
+        "B": 1668.21,
+        "C": 228.0,
+        "T_range": [
+          60,
+          150
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": 0.0,
+      "dHm": 6.008,
+      "Tb": 100.0,
+      "dHv": 40.65,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -228.59,
+        "dHf": -241.83,
+        "dHc": 0,
+        "source": "murphy-2e-B5"
+      },
+      "l": {
+        "dGf": -237.19,
+        "dHf": -285.84,
+        "dHc": -44.0,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "o-xylene": {
+    "formula": "C8H10",
+    "MW": 106.168,
+    "cp_gas": {
+      "cp_approx": 133.3,
+      "A": -15.85,
+      "B": 0.5962,
+      "C": -0.0003443,
+      "D": 7.528e-08,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 6.99891,
+        "B": 1474.679,
+        "C": 213.69,
+        "T_range": [
+          32,
+          172
+        ],
+        "source": "murphy-2e-B6",
+        "note": "Printed as 'n-Xylene' (typo; no n-xylene exists); stored as o-xylene."
+      }
+    ],
+    "phase_change": {
+      "Tm": -25.2,
+      "dHm": 13.611,
+      "Tb": 144.4,
+      "dHv": 36.2,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 122.2,
+        "dHf": 19.08,
+        "dHc": -4333.0,
+        "source": "murphy-2e-B5"
+      },
+      "l": {
+        "dGf": 110.33,
+        "dHf": -24.44,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "m-xylene": {
+    "formula": "C8H10",
+    "MW": 106.168,
+    "cp_gas": {
+      "cp_approx": 127.6,
+      "A": -29.27,
+      "B": 0.6297,
+      "C": -0.0003747,
+      "D": 8.478e-08,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 7.00908,
+        "B": 1462.266,
+        "C": 215.11,
+        "T_range": [
+          28,
+          166
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -47.2,
+      "dHm": 11.554,
+      "Tb": 139.1,
+      "dHv": 36.7,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 118.76,
+        "dHf": 17.32,
+        "dHc": -4331.8,
+        "source": "murphy-2e-B5"
+      },
+      "l": {
+        "dGf": 107.654,
+        "dHf": -25.418,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "p-xylene": {
+    "formula": "C8H10",
+    "MW": 106.168,
+    "cp_gas": {
+      "cp_approx": 126.9,
+      "A": -25.09,
+      "B": 0.6042,
+      "C": -0.0003374,
+      "D": 6.82e-08,
+      "source": "murphy-2e-B19"
+    },
+    "antoine": [
+      {
+        "A": 6.99052,
+        "B": 1453.43,
+        "C": 215.31,
+        "T_range": [
+          27,
+          166
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": 13.2,
+      "dHm": 16.805,
+      "Tb": 138.4,
+      "dHv": 35.7,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 121.4,
+        "dHf": 18.03,
+        "dHc": -4333.0,
+        "source": "murphy-2e-B5"
+      },
+      "l": {
+        "dGf": 110.08,
+        "dHf": -24.246,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "acetic-anhydride": {
+    "formula": "C4H6O3",
+    "MW": 102.089,
+    "antoine": [
+      {
+        "A": 7.14948,
+        "B": 1444.718,
+        "C": 199.817,
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -73.1,
+      "dHm": 10.5,
+      "Tb": 137,
+      "dHv": 41.2,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -473.4,
+        "dHf": -572.5,
+        "dHc": -1675,
+        "source": "murphy-2e-B5",
+        "note": "dHc does not match the gas: it differs from the value implied by the gas dHf by about the heat of vaporization (or sublimation), so it is likely for the compound in its normal state at 25 C (liquid or solid), despite being printed on the gas row. Stored as printed."
+      }
+    }
+  },
+  "acrylonitrile": {
+    "formula": "C3H3N",
+    "MW": 53.064,
+    "antoine": [
+      {
+        "A": 7.03855,
+        "B": 1232.53,
+        "C": 222.47,
+        "T_range": [
+          -20,
+          140
+        ],
+        "source": "murphy-2e-B6",
+        "note": "These constants give a normal boiling point of 74.0 C vs tabulated and literature Tb of 77.3 C."
+      }
+    ],
+    "phase_change": {
+      "Tm": -83.5,
+      "dHm": 6.23,
+      "Tb": 77.3,
+      "dHv": 32.6,
+      "source": "murphy-2e-B22"
+    }
+  },
+  "benzoic-acid": {
+    "formula": "C6H5COOH",
+    "MW": 122.123,
+    "antoine": [
+      {
+        "A": 7.3533,
+        "B": 1771.4,
+        "C": 145.67,
+        "T_range": [
+          96,
+          250
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": 122,
+      "dHm": 18.0,
+      "Tb": 249,
+      "dHv": 90.6,
+      "source": "murphy-2e-B22"
+    }
+  },
+  "n-butanol": {
+    "formula": "C4H9OH",
+    "MW": 74.123,
+    "antoine": [
+      {
+        "A": 7.4768,
+        "B": 1362.39,
+        "C": 178.77,
+        "T_range": [
+          15,
+          131
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ]
+  },
+  "diethanolamine": {
+    "formula": "(C2H5O)2NH",
+    "MW": 105.137,
+    "antoine": [
+      {
+        "A": 8.1388,
+        "B": 2327.9,
+        "C": 174.4,
+        "T_range": [
+          194,
+          241
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ]
+  },
+  "ethanolamine": {
+    "formula": "C2H7ON",
+    "MW": 61.084,
+    "antoine": [
+      {
+        "A": 7.4568,
+        "B": 1577.67,
+        "C": 173.37,
+        "T_range": [
+          65,
+          171
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ]
+  },
+  "ethylamine": {
+    "formula": "C2H5NH2",
+    "MW": 45.085,
+    "antoine": [
+      {
+        "A": 7.05413,
+        "B": 987.31,
+        "C": 220.0,
+        "T_range": [
+          -20,
+          90
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -81,
+      "Tb": 15,
+      "dHv": 27.5,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 36.16,
+        "dHf": -47.15,
+        "dHc": -1587.4,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "formic-acid": {
+    "formula": "CH2O2",
+    "MW": 46.025,
+    "antoine": [
+      {
+        "A": 7.5818,
+        "B": 1699.2,
+        "C": 260.7,
+        "T_range": [
+          37,
+          101
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": 8.3,
+      "dHm": 12.72,
+      "Tb": 101,
+      "dHv": 22.7,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -351.0,
+        "dHf": -378.6,
+        "dHc": -211.5,
+        "source": "murphy-2e-B5",
+        "note": "dHc does not match the gas: it differs from the value implied by the gas dHf by about the heat of vaporization (or sublimation), so it is likely for the compound in its normal state at 25 C (liquid or solid), despite being printed on the gas row. Stored as printed."
+      }
+    }
+  },
+  "hydrogen-peroxide": {
+    "formula": "H2O2",
+    "MW": 34.014,
+    "antoine": [
+      {
+        "A": 7.96917,
+        "B": 1886.76,
+        "C": 220.6,
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -2,
+      "dHm": 10.54,
+      "Tb": 158,
+      "dHv": 42.97,
+      "source": "murphy-2e-B22",
+      "note": "Tabulated Tb 158 C disagrees with the Antoine constants (150.2 C) and literature (~150 C); stored as printed."
+    },
+    "standard": {
+      "g": {
+        "dGf": -105.48,
+        "dHf": -136.11,
+        "source": "murphy-2e-B5"
+      },
+      "l": {
+        "dGf": -118.11,
+        "dHf": -188.95,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "methyl-ethyl-ketone": {
+    "formula": "CH3COC2H5",
+    "MW": 72.107,
+    "antoine": [
+      {
+        "A": 6.97,
+        "B": 1210,
+        "C": 216,
+        "source": "murphy-2e-B6"
+      }
+    ]
+  },
+  "naphthalene": {
+    "formula": "C10H8",
+    "MW": 128.174,
+    "antoine": [
+      {
+        "A": 7.01065,
+        "B": 1733.71,
+        "C": 201.86,
+        "T_range": [
+          86,
+          250
+        ],
+        "phase": "s",
+        "source": "murphy-2e-B6",
+        "note": "Table labels the 86-250 C set as solid (s), but naphthalene melts at 80.2 C, so a solid range above 80 C is impossible; the (s)/(l) labels or ranges may be misprinted. Stored as printed."
+      },
+      {
+        "A": 6.8181,
+        "B": 1585.86,
+        "C": 184.82,
+        "T_range": [
+          125,
+          218
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": 80.2,
+      "dHm": 19.123,
+      "Tb": 218,
+      "dHv": 43.3,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": 224.08,
+        "dHf": 150.58,
+        "dHc": -498.09,
+        "source": "murphy-2e-B5",
+        "note": "dHc printed as -498.09; the value implied by dHf is about -4981, so a digit is likely missing. Stored as printed."
+      }
+    }
+  },
+  "propionic-acid": {
+    "formula": "C2H5COOH",
+    "MW": 74.079,
+    "antoine": [
+      {
+        "A": 6.403,
+        "B": 950.2,
+        "C": 130.3,
+        "T_range": [
+          56,
+          139
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ],
+    "phase_change": {
+      "Tm": -21,
+      "dHm": 10.66,
+      "Tb": 139.3,
+      "dHv": 55,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -366.7,
+        "dHf": -453.5,
+        "dHc": -1395,
+        "source": "murphy-2e-B5",
+        "note": "dHc does not match the gas: it differs from the value implied by the gas dHf by about the heat of vaporization (or sublimation), so it is likely for the compound in its normal state at 25 C (liquid or solid), despite being printed on the gas row. Stored as printed."
+      },
+      "l": {
+        "dGf": -383.5,
+        "dHf": -509.2,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "tetramethyl-lead": {
+    "formula": "C4H12Pb",
+    "MW": 267.34,
+    "antoine": [
+      {
+        "A": 6.9377,
+        "B": 1335.3,
+        "C": 219.1,
+        "T_range": [
+          0,
+          60
+        ],
+        "source": "murphy-2e-B6"
+      }
+    ]
+  },
+  "adipic-acid": {
+    "formula": "C6H10O4",
+    "MW": 146.142,
+    "phase_change": {
+      "Tm": 153.2,
+      "dHm": 34.58,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "l": {
+        "dGf": -985.4,
+        "dHf": -741.3,
+        "source": "murphy-2e-B5",
+        "note": "dGf (-985.4) is more negative than dHf (-741.3); literature for adipic acid is dHf about -994 (solid), so these columns may be swapped. Stored as printed."
+      }
+    }
+  },
+  "bromoform": {
+    "formula": "CHBr3",
+    "MW": 252.731,
+    "phase_change": {
+      "Tm": -6,
+      "dHm": 11.1,
+      "Tb": 149,
+      "dHv": 39.66,
+      "source": "murphy-2e-B22"
+    }
+  },
+  "calcium-carbonate": {
+    "formula": "CaCO3",
+    "MW": 100.086,
+    "phase_change": {
+      "Tm": 1282,
+      "dHm": 53,
+      "source": "murphy-2e-B22",
+      "note": "dHm printed in parentheses, (53), in the table, which usually marks an estimated or uncertain value."
+    },
+    "standard": {
+      "s": {
+        "dGf": -1133.0,
+        "dHf": -1211.3,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "calcium-chloride": {
+    "formula": "CaCl2",
+    "MW": 110.978,
+    "phase_change": {
+      "Tm": 782,
+      "dHm": 25.5,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "s": {
+        "dGf": -752.28,
+        "dHf": -797.47,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "carbon": {
+    "formula": "C",
+    "MW": 12.011,
+    "phase_change": {
+      "Tm": 3600,
+      "dHm": 46,
+      "source": "murphy-2e-B22",
+      "note": "Graphite."
+    }
+  },
+  "dimethyl-carbonate": {
+    "formula": "C3H6O3",
+    "MW": 90.078,
+    "phase_change": {
+      "Tm": -5.6,
+      "dHm": 11.58,
+      "Tb": 90,
+      "dHv": 33.2,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -452.4,
+        "dHf": -570.1,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "gallium": {
+    "formula": "Ga",
+    "MW": 69.723,
+    "phase_change": {
+      "Tm": 29.8,
+      "dHm": 5.59,
+      "Tb": 2071,
+      "source": "murphy-2e-B22"
+    }
+  },
+  "iron": {
+    "formula": "Fe",
+    "MW": 55.845,
+    "phase_change": {
+      "Tm": 1530,
+      "dHm": 14.895,
+      "Tb": 2735,
+      "dHv": 354,
+      "source": "murphy-2e-B22"
+    }
+  },
+  "iron-oxide": {
+    "formula": "FeO",
+    "MW": 71.844,
+    "phase_change": {
+      "Tm": 1380,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "s": {
+        "dGf": -248.45,
+        "dHf": -270.37,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "methylamine": {
+    "formula": "CH3NH2",
+    "MW": 31.058,
+    "phase_change": {
+      "Tm": -93.5,
+      "dHm": 6.133,
+      "dHv": 25.6,
+      "source": "murphy-2e-B22",
+      "note": "Formula printed as CH3NH3 (typo); stored as CH3NH2."
+    }
+  },
+  "methyl-ethyl-ether": {
+    "formula": "CH3OC2H5",
+    "MW": 60.096,
+    "phase_change": {
+      "Tb": 10.8,
+      "dHv": 26.7,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -117.1,
+        "dHf": -216.4,
+        "dHc": -1931.4,
+        "source": "murphy-2e-B5",
+        "note": "Phase not labeled in the table; it is a gas at 25 C (Tb 10.8 C)."
+      }
+    }
+  },
+  "nitric-acid": {
+    "formula": "HNO3",
+    "MW": 63.012,
+    "phase_change": {
+      "Tm": -47,
+      "dHm": 2.51,
+      "Tb": 83,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "g": {
+        "dGf": -73.51,
+        "dHf": -133.85,
+        "source": "murphy-2e-B5"
+      },
+      "l": {
+        "dGf": -79.91,
+        "dHf": -173.22,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "nitroglycerin": {
+    "formula": "C3H5N3O9",
+    "MW": 227.085,
+    "phase_change": {
+      "Tm": 13,
+      "Tb": 256,
+      "dHv": 92,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "l": {
+        "dHf": -279.1,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "silicon": {
+    "formula": "Si",
+    "MW": 28.085,
+    "phase_change": {
+      "Tm": 1427,
+      "dHm": 39.6,
+      "Tb": 2290,
+      "source": "murphy-2e-B22"
+    }
+  },
+  "silicon-dioxide": {
+    "formula": "SiO2",
+    "MW": 60.083,
+    "phase_change": {
+      "Tm": 1470,
+      "dHm": 14.226,
+      "Tb": 2230,
+      "source": "murphy-2e-B22",
+      "note": "Quartz."
+    },
+    "standard": {
+      "s": {
+        "dGf": -796.6,
+        "dHf": -850.8,
+        "source": "murphy-2e-B5",
+        "note": "Crystalline quartz."
+      }
+    }
+  },
+  "sodium-carbonate": {
+    "formula": "Na2CO3",
+    "MW": 105.988,
+    "phase_change": {
+      "Tm": 854,
+      "dHm": 29,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "s": {
+        "dGf": -1044.12,
+        "dHf": -1127.42,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "sodium-chloride": {
+    "formula": "NaCl",
+    "MW": 58.44,
+    "phase_change": {
+      "Tm": 747,
+      "dHm": 25.69,
+      "Tb": 1392,
+      "dHv": 158.78,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "aq": {
+        "dGf": -393.17,
+        "dHf": -407.27,
+        "source": "murphy-2e-B5"
+      },
+      "s": {
+        "dGf": -384.485,
+        "dHf": -411.375,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "sodium-cyanide": {
+    "formula": "NaCN",
+    "MW": 49.008,
+    "phase_change": {
+      "Tm": 562,
+      "Tb": 1500,
+      "dHv": 155.98,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "s": {
+        "dGf": -76.4,
+        "dHf": -94.0,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "sodium-hydroxide": {
+    "formula": "NaOH",
+    "MW": 39.997,
+    "phase_change": {
+      "Tm": 322,
+      "dHm": 8.4,
+      "Tb": 1378,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "s": {
+        "dGf": -379.4,
+        "dHf": -425.9,
+        "source": "murphy-2e-B5"
+      },
+      "aq": {
+        "dGf": -419.2,
+        "dHf": -469.15,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "sulfuric-acid": {
+    "formula": "H2SO4",
+    "MW": 98.072,
+    "phase_change": {
+      "Tm": 10.5,
+      "dHm": 9.87,
+      "source": "murphy-2e-B22"
+    },
+    "standard": {
+      "l": {
+        "dGf": -689.9,
+        "dHf": -810.4,
+        "source": "murphy-2e-B5"
+      },
+      "aq": {
+        "dHf": -887.1,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "trinitrotoluene": {
+    "formula": "C7H5N3O6",
+    "MW": 227.132,
+    "phase_change": {
+      "Tm": 79,
+      "dHm": 23.4,
+      "source": "murphy-2e-B22",
+      "note": "Tb listed as 'explodes'."
+    },
+    "standard": {
+      "g": {
+        "dHf": 24.1,
+        "source": "murphy-2e-B5"
+      },
+      "s": {
+        "dHf": -65.6,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "urea": {
+    "formula": "CH4N2O",
+    "MW": 60.056,
+    "phase_change": {
+      "Tm": 133,
+      "dHm": 14.5,
+      "dHsub": 87.9,
+      "source": "murphy-2e-B22",
+      "note": "Tb listed as 'decomposes'; table gives 87.9 kJ/mol as heat of sublimation (stored as dHsub)."
+    },
+    "standard": {
+      "g": {
+        "dGf": -152.7,
+        "dHf": -235.5,
+        "source": "murphy-2e-B5"
+      },
+      "l": {
+        "dGf": -194.3,
+        "dHf": -324.5,
+        "source": "murphy-2e-B5"
+      },
+      "s": {
+        "dGf": -196.8,
+        "dHf": -333.6,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "ammonium-chloride": {
+    "formula": "NH4Cl",
+    "MW": 53.489,
+    "standard": {
+      "s": {
+        "dGf": -203.89,
+        "dHf": -705.63,
+        "source": "murphy-2e-B5",
+        "note": "dHf -705.63 disagrees with literature (about -314.4 kJ/mol). Stored as printed."
+      }
+    }
+  },
+  "ammonium-nitrate": {
+    "formula": "N2H5NO3",
+    "MW": 95.058,
+    "standard": {
+      "s": {
+        "dHf": -251.58,
+        "source": "murphy-2e-B5",
+        "note": "Formula printed N2H5NO3 and dHf -251.58 match hydrazinium nitrate, not NH4NO3 (literature dHf about -365.6). Stored as printed."
+      },
+      "aq": {
+        "dGf": -28.9,
+        "dHf": -215.1,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "carbonyl-sulfide": {
+    "formula": "COS",
+    "MW": 60.07,
+    "standard": {
+      "g": {
+        "dGf": -165.5,
+        "dHf": -141.5,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "diethyl-carbonate": {
+    "formula": "C5H10O3",
+    "MW": 118.132,
+    "standard": {
+      "l": {
+        "dHf": -681.5,
+        "source": "murphy-2e-B5",
+        "note": "Phase not labeled in the table; value matches liquid diethyl carbonate."
+      }
+    }
+  },
+  "gallium-nitride": {
+    "formula": "GaN",
+    "MW": 83.73,
+    "standard": {
+      "s": {
+        "dHf": -109.6,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "glucose": {
+    "formula": "C6H12O6",
+    "MW": 180.156,
+    "standard": {
+      "s": {
+        "dGf": -910.56,
+        "dHf": -1273.3,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "hexamethylenediamine": {
+    "formula": "C6H16N2",
+    "MW": 116.208,
+    "standard": {
+      "g": {
+        "dGf": 120.96,
+        "dHf": -127.9,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "hematite": {
+    "formula": "Fe2O3",
+    "MW": 159.687,
+    "standard": {
+      "s": {
+        "dGf": -749.35,
+        "dHf": -830.5,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "magnetite": {
+    "formula": "Fe3O4",
+    "MW": 231.531,
+    "standard": {
+      "s": {
+        "dGf": -1013.8,
+        "dHf": -1116.7,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "magnesium-carbonate": {
+    "formula": "MgCO3",
+    "MW": 84.313,
+    "standard": {
+      "s": {
+        "dGf": -1012.1,
+        "dHf": -1095.8,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "magnesium-chloride": {
+    "formula": "MgCl2",
+    "MW": 95.205,
+    "standard": {
+      "s": {
+        "dGf": -601.5,
+        "dHf": -641.1,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "ozone": {
+    "formula": "O3",
+    "MW": 47.997,
+    "standard": {
+      "g": {
+        "dGf": 163.2,
+        "dHf": 143,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "potassium-chloride": {
+    "formula": "KCl",
+    "MW": 74.548,
+    "standard": {
+      "s": {
+        "dGf": -408.5,
+        "dHf": -436.68,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "sodium-borohydride": {
+    "formula": "NaBH4",
+    "MW": 37.832,
+    "standard": {
+      "aq": {
+        "dGf": -147.61,
+        "dHf": -199.6,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "sodium-metaborate": {
+    "formula": "NaBO2",
+    "MW": 65.798,
+    "standard": {
+      "aq": {
+        "dGf": -940.81,
+        "dHf": -1012.49,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "sucrose": {
+    "formula": "C12H22O11",
+    "MW": 342.297,
+    "standard": {
+      "s": {
+        "dHf": -2226.1,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "vinyl-chloride": {
+    "formula": "C2H3Cl",
+    "MW": 62.496,
+    "standard": {
+      "g": {
+        "dGf": 41.95,
+        "dHf": 28.45,
+        "dHc": -1178,
+        "source": "murphy-2e-B5"
+      }
+    }
+  },
+  "helium": {
+    "formula": "He",
+    "MW": 4.003,
+    "henry_water": {
+      "points": [
+        [
+          0,
+          129000
+        ],
+        [
+          10,
+          126000
+        ],
+        [
+          20,
+          125000
+        ],
+        [
+          30,
+          124000
+        ],
+        [
+          40,
+          121000
+        ],
+        [
+          50,
+          115000
+        ]
+      ],
+      "source": "murphy-2e-B7"
+    }
+  }
+}
